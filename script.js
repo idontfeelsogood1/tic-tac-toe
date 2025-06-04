@@ -11,11 +11,11 @@ const displayController = (function () {
     let player1 = createPlayer('idontfeelsogood1', 'x');
     let player2 = createPlayer('idontfeelsogood2', 'o');
     
-
 })();
 
 function createPlayer(name, mark) {
-    return { name, mark };
+    let score = 0;
+    return { name, mark, score };
 }
 
 function checkWinAndDraw(mark) {
