@@ -14,21 +14,24 @@
                 <input type="text" class="player" placeholder="Player 1">
                 <input type="text" class="player" placeholder="Player 2">
             </p>
-            <button type="button">Play</button>
+            <button type="button" class="play">Play</button>
         </form>
     </header>
+    
+    
 
     <main>
+        <h1 class="winner"></h1>
         <div id="game-board">
-            <div class="board" id="one"></div>
-            <div class="board" id="two"></div>
-            <div class="board" id="three"></div>
-            <div class="board" id="four"></div>
-            <div class="board" id="five"></div>
-            <div class="board" id="six"></div>
-            <div class="board" id="seven"></div>
-            <div class="board" id="eight"></div>
-            <div class="board" id="nine"></div>
+            <button class="" data-x="0" data-y="0" disabled></button>
+            <button class="" data-x="0" data-y="1" disabled></button>
+            <button class="" data-x="0" data-y="2" disabled></button>
+            <button class="" data-x="1" data-y="0" disabled></button>
+            <button class="" data-x="1" data-y="1" disabled></button>
+            <button class="" data-x="1" data-y="2" disabled></button>
+            <button class="" data-x="2" data-y="0" disabled></button>
+            <button class="" data-x="2" data-y="1" disabled></button>
+            <button class="" data-x="2" data-y="2" disabled></button>
         </div>
     </main>
 </body>
