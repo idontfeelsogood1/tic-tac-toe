@@ -21,13 +21,14 @@ const whenPlayButtonClicked = (function () {
         for (let player of players ) {
             player.setAttribute("disabled", "disabled");
         }
+        displayController();
     })
 })();
 
 
-const displayController = (function () {
-    let player1 = createPlayer('idontfeelsogood1', 'x');
-    let player2 = createPlayer('idontfeelsogood2', 'o');
+function displayController() {
+    let player1 = createPlayer(document.querySelector('.player1').value, 'x');
+    let player2 = createPlayer(document.querySelector('.player2').value, 'o');
     let currentPlayer = player1.name;
     let boardCounter = 0;
     let hasWon = false;
@@ -40,7 +41,6 @@ const displayController = (function () {
                 gameBoard.arr[Number(board.dataset.x)][Number(board.dataset.y)] = player1.mark;
                 board.innerText = player1.mark;
                 if (checkWin(player1.mark) === 'Win') {
-                    console.log('Player1');
                     hasWon = true;
                     winner.innerText = `WINNER: ${player1.name}`;
                 } 
@@ -50,7 +50,6 @@ const displayController = (function () {
                 gameBoard.arr[Number(board.dataset.x)][Number(board.dataset.y)] = player2.mark;
                 board.innerText = player2.mark;
                 if (checkWin(player2.mark) === 'Win') {
-                    console.log('Player2');
                     hasWon = true;
                     winner.innerText = `WINNER: ${player2.name}`;
                 }
@@ -67,13 +66,12 @@ const displayController = (function () {
             }
 
             if (boardCounter === 9 && hasWon != true) {
-                console.log('draw');
                 winner.innerText = 'DRAW';
             }
 
         })
     }
-})();
+}
 
 function createPlayer(name, mark) {
     return { name, mark };
