@@ -1,0 +1,10 @@
+CHECK row by row for consecutive mark
+CHECK column by column for consecutive mark
+CHECK left diagonal for consecutive mark
+CHECK right diagonal for consecutive mark
+
+IF 1 matches:
+    RETURN win
+ELSE IF none of the above matches:
+    RETURN draw
+
